@@ -1,0 +1,78 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+.container {
+	margin-top: 15px;
+	text-align: justify;
+	word-wrap: break-word;
+}
+.intro {
+    font-size: 20px;
+}
+.profile {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile strong {
+    text-transform: uppercase;
+}
+a.thumbnail {
+    background: url('../../assets/images/borisding.120.jpeg') no-repeat;
+    border-radius: 50%;
+    border: 2px solid #f7f7f7;
+    display: block;
+    height: 120px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+a.thumbnail:hover {
+	border: 2px solid #1EAEDB;
+	box-shadow: none;
+}
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.eot');
+    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('../../assets/fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('../../assets/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('../../assets/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.symbol, a.symbol:before {
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+a.symbol:before {
+    content: attr(title);
+    font-size: 130%;
+    margin-right: 4px;
+}
+p.social {
+	text-align: center;
+	margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+p.social a {
+	color: #babbbc;
+	text-decoration: none;
+	font-size: 28px; 
+}
+p.social a:hover {
+    color: #1eaedb;	
+}
