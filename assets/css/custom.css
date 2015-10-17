@@ -1,6 +1,33 @@
 body {
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/IY9HZVvI1cMoAHxvl0w9LVKPGs1ZzpMvnHX-7fPOuAc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/22JRxvfANxSmnAhzbFH8PgLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.eot');
+    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('../../assets/fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('../../assets/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('../../assets/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 .container {
 	margin-top: 15px;
@@ -8,15 +35,12 @@ body {
 	word-wrap: break-word;
 }
 .intro {
-    font-size: 20px;
+    font-size: 21px;
 }
 .profile {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-}
-.profile strong {
-    text-transform: uppercase;
 }
 a.thumbnail {
     background: url('../../assets/images/borisding.120.jpeg') no-repeat;
@@ -32,17 +56,6 @@ a.thumbnail {
 a.thumbnail:hover {
 	border: 4px solid #1EAEDB;
 	box-shadow: none;
-}
-@font-face {
-    font-family: 'Mono Social Icons Font';
-    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.eot');
-    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
-         url('../../assets/fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
-         url('../../assets/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'),
-         url('../../assets/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
-    src: url('../../assets/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 .symbol, a.symbol:before {
     font-family: 'Mono Social Icons Font';
@@ -64,7 +77,8 @@ a.symbol:before {
 }
 p.social {
 	text-align: center;
-	margin-top: 15px;
+    margin-top: 15px;
+	margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
 }
