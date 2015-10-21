@@ -20,7 +20,7 @@ body {
 }
 .intro {
     font-size: 21px;
-    color: #7C8990;
+    color: #babbbc;
 }
 .profile {
     text-align: center;
@@ -39,7 +39,7 @@ a.thumbnail {
     margin-bottom: 30px;
 }
 a.thumbnail:hover {
-	border: 4px solid #1EAEDB;
+	border: 4px solid #babbbc;
 	box-shadow: none;
 }
 .symbol, a.symbol:before {
