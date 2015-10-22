@@ -1,6 +1,7 @@
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 17px;
+    color: #333333;
 }
 @font-face {
     font-family: 'Mono Social Icons Font';
@@ -20,7 +21,7 @@ body {
 }
 .intro {
     font-size: 21px;
-    color: #a9a9a9;
+    color: #babbbc;
 }
 .profile {
     text-align: center;
@@ -39,7 +40,7 @@ a.thumbnail {
     margin-bottom: 30px;
 }
 a.thumbnail:hover {
-	border: 4px solid #babbbc;
+	border: 4px solid #1EAEDB;
 	box-shadow: none;
 }
 .symbol, a.symbol:before {
