@@ -76,9 +76,7 @@
     };
 
     var run = function() {
-        var menus = this.$qsa('#nav a');
-
-        [].forEach.call(menus, function(menu) {
+        [].forEach.call(this.$qsa('#nav a'), function(menu) {
             if (menu.id) this.set(menu.id);
         }.bind(this));
 

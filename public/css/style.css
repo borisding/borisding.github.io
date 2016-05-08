@@ -21,7 +21,7 @@ body {
 }
 @media (min-width: 768px) {
   .container .page-content {
-    width: 720px;
+    width: 700px;
   }
 }
 @media (min-width: 300px) and (max-width: 767px) {
