@@ -8,40 +8,23 @@
 <title>Boris Ding Poh Hing | Web Developer</title>
 <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk= sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg==" crossorigin="anonymous">
-<link href='http://borisding.github.io/assets/css/style.min.css' rel='stylesheet' type='text/css'>
+<link href='public/css/style.min.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="container">
-  <div class="row">
-    <div class="offset-by-three six columns">
-        <section class="profile">
-            <a href="./" class="thumbnail" title="Boris Ding P H"></a>
-            <strong>Boris Ding Poh Hing</strong>
-            <p class="social">
-            <a href='https://twitter.com/boris_ding' title="Twitter"><i class="fa fa-fw fa-twitter-square"></i></a>
-            <a href='https://instagram.com/borisding/' title="Instagram"><i class="fa fa-fw fa-instagram"></i></a>
-            <a href='https://github.com/borisding' title="GitHub"><i class="fa fa-fw fa-github-square"></i></a>
-            <a href='https://sg.linkedin.com/in/borisding' title="Linkedin"><i class="fa fa-fw fa-linkedin-square"></i></a>
-            </p>
-        </section>
-        <section>
-            <p class="intro">
-            Hi there — I’m Boris Ding, a <span>Web Developer</span> from Malaysia who came to Singapore in year 2007.
-            I currently work on advertising platform for <a href="http://global.rakuten.com/corp/worldwide/asia_oceania.html">Rakuten</a> and deal with the front-end stuff most of the time.
-            </p>
-            <p>
-            Prior to Rakuten, I had been working on various web-based business applications which include ERP, CRM and project management systems for both server and client-side.
-            </p>
-            <p>
-            I enjoy coding and focus on JavaScript and PHP programming languages. At the same time, I'm also dabbling in <a href="https://nodejs.org/en/">Node.js</a> with <a href="http://expressjs.com/">Express</a> framework.
-            When not doing with web stuff, I mostly spend my time on reading and photography.
-            </p>
-            <p>
-            Meanwhile, you may also be interested in some of my personal work. Please check it out on <a href="https://github.com/borisding">GitHub</a>.
-            </p>
-        </section>
-    </div>
-  </div>
+    <header>
+        <a href="./" class="thumbnail" title="Boris Ding Poh Hing"></a>
+        <span class="info">Boris Ding Poh Hing</span>
+        <nav class="nav" id="nav">
+            <a href="./about" id="about">About</a>
+            <a href="./projects" id="projects">Projects</a>
+            <a href="./skills" id="skills">Skills</a>
+            <a href="./contacts" id="contacts">Elsewhere</a>
+        </nav>
+    </header>
+    <article id="page-content" class="page-content"></article>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
+<script src="public/js/app.min.js"></script>
 </body>
 </html>

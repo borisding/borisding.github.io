@@ -1,0 +1,131 @@
+@base-color: #333;
+@base-border-color: #ccc;
+@base-font-size: 16px;
+@base-margin: 15px;
+@base-padding: 15px;
+@color-white: #fff;
+@color-light-green: #6ac5ac;
+@color-background: #34302d;
+@img-size: 100px;
+@desktop-width: 720px;
+@mobile-width: 100%;
+
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.center-inline-block {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.keyframes(@name; @args) {
+    @-moz-keyframes @name {
+        @args();
+    }
+    @-webkit-keyframes @name { 
+        @args();
+    }
+    @keyframes @name {
+        @args();
+    }
+}
+
+.animation(@args) {
+    -webkit-animation: @args;
+    -moz-animation: @args;
+    animation: @args;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: @base-font-size;
+    color: @base-color;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .container .page-content {
+        width: @desktop-width;
+    }    
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+    .container .page-content {
+        width: @mobile-width;
+    }
+}
+
+.container {
+    width: auto;
+    .page-content {
+        padding: 215px @base-padding @base-padding @base-padding;
+        font-size: 1.1em;
+        .center-block();
+        .fa {
+            color: @color-light-green;
+        }
+        &>.spinner {
+            margin-top: @base-margin;
+        }
+    }
+    header {
+        background-color: @color-background;
+        text-align: center;
+        box-shadow: 5px 0px 15px @base-border-color;
+        border-bottom: 3px solid @color-light-green;
+        color: @color-white;
+        display: block;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 200px;
+        font-size: 1.5em;
+        .keyframes(fade-in; {
+            0% {  opacity: 0; }
+            50% {  opacity: 0.5; }
+            100% { opacity: 1; }
+        });
+        .thumbnail {
+            border-radius: 50%;
+            border: 3px solid @color-light-green;
+            background: url('../../public/images/boris.ding.jpg') no-repeat;
+            height: @img-size;
+            width: @img-size;
+            margin-top: @base-margin / 2;
+            margin-bottom: @base-margin / 2;
+            .center-block();
+            .animation(fade-in 1s linear .2s both);
+        }
+        .info {
+            .animation(fade-in 1s linear .5s both);
+        }
+    }
+    nav {
+        text-align: center;
+        width: 100%;
+        margin-top: @base-margin / 2;
+        margin-bottom: @base-margin / 2;
+        .animation(fade-in 1s linear .7s both);
+        &>a {
+            color: @color-white;
+            font-size: .75em;
+            margin-left: @base-margin / 2;
+            margin-right: @base-margin / 2;
+            &:hover,
+            &.active {
+                color: @color-light-green;
+                text-decoration: none;
+            }
+        }
+    }
+}

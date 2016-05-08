@@ -5,25 +5,49 @@ module.exports = function(grunt) {
 	
 	grunt.initConfig({
 	    pkg: grunt.file.readJSON('package.json'),
-	    
+	    // uglify javascript files
+        uglify: {
+            options: {
+                sourceMap: true
+            },
+            build: {
+                files: {
+                    'public/js/app.min.js': 'public/src/js/*.js'
+                }
+            }
+        },
+	    // less file built to source css
+        less: {
+            build: {
+                files: {
+                    'public/css/style.css': 'public/src/less/style.less'
+                }
+            }
+        },
+        // css file minification
 	    cssmin: {
 	        build: {
 	            files: {
-	                'assets/css/style.min.css': 
-	                ['assets/css/normalize.css',
-                     'assets/css/skeleton.css',
-                     'assets/css/custom.css'
-                    ]
+	                'public/css/style.min.css': 'public/css/style.css'
 	            }
 	        }
         },
+        // watch tasks
         watch: {
+            js: {
+                files: ['public/src/js/*.js'],
+                tasks: ['uglify']
+            },
+            less: {
+                files: ['public/src/less/*.less'],
+                tasks: ['less']
+            },
             css: {
-                files: ['assets/css/*.css'],
+                files: ['public/css/style.css'],
                 tasks: ['cssmin']
             }
         }
 	});
 	
-	grunt.registerTask('default', 'Run all build tasks.', ['cssmin']);
+	grunt.registerTask('default', 'Run all build tasks.', ['uglify', 'less', 'cssmin']);
 };
