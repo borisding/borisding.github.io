@@ -1,6 +1,6 @@
 {
   "name": "borisding",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "authors": [
     "boris.ding82@gmail.com"
   ],
@@ -13,6 +13,7 @@
   ],
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-uglify": "^1.0.1",

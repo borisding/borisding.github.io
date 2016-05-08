@@ -21,16 +21,17 @@ body {
 }
 @media (min-width: 768px) {
   .container .page-content {
-    width: 700px;
+    width: 35em;
   }
 }
 @media (min-width: 300px) and (max-width: 767px) {
   .container .page-content {
-    width: 100%;
+    width: auto;
   }
 }
 .container {
   width: auto;
+  word-wrap: break-word;
 }
 .container .page-content {
   padding: 215px 15px 15px 15px;
@@ -40,10 +41,14 @@ body {
   display: block;
 }
 .container .page-content .fa {
-  color: #6ac5ac;
+  color: #ededed;
 }
 .container .page-content > .spinner {
   margin-top: 15px;
+}
+.container .page-content > .lead {
+  font-size: 1.25em;
+  color: #999;
 }
 .container header {
   background-color: #34302d;
@@ -57,6 +62,7 @@ body {
   width: 100%;
   height: 200px;
   font-size: 1.5em;
+  text-transform: uppercase;
 }
 @-moz-keyframes fade-in {
   0% {
@@ -93,7 +99,7 @@ body {
 }
 .container header .thumbnail {
   border-radius: 50%;
-  border: 3px solid #6ac5ac;
+  border: 1px solid #34302d;
   background: url('../../public/images/boris.ding.jpg') no-repeat;
   height: 100px;
   width: 100px;
@@ -130,4 +136,16 @@ body {
 .container nav > a.active {
   color: #6ac5ac;
   text-decoration: none;
+}
+.container .loader {
+  display: none;
+  background: url('../../public/images/ajax-loader.gif') no-repeat;
+  left: 50%;
+  top: 60%;
+  position: fixed;
+  z-index: 9999;
+  width: 35px;
+  height: 35px;
+  margin-left: -17.333333px;
+  margin-top: -17.333333px;
 }

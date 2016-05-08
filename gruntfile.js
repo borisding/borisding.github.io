@@ -1,22 +1,32 @@
 module.exports = function(grunt) {
-	'use strict';
-	
-	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-	
-	grunt.initConfig({
-	    pkg: grunt.file.readJSON('package.json'),
-	    // uglify javascript files
+    'use strict';
+
+    require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        // uglify javascript files
         uglify: {
+        options: {
+            sourceMap: true
+        },
+        build: {
+            files: {
+                'public/js/app.min.js': 'public/src/js/*.js'
+            }
+        }
+        },
+        // concat js
+        concat: {
             options: {
-                sourceMap: true
+                separator: ';\n',
             },
-            build: {
-                files: {
-                    'public/js/app.min.js': 'public/src/js/*.js'
-                }
+            dist: {
+                src: ['public/js/page.min.js', 'public/js/app.min.js'],
+                dest: 'public/js/app.bundle.js'
             }
         },
-	    // less file built to source css
+        // less file built to source css
         less: {
             build: {
                 files: {
@@ -25,18 +35,18 @@ module.exports = function(grunt) {
             }
         },
         // css file minification
-	    cssmin: {
-	        build: {
-	            files: {
-	                'public/css/style.min.css': 'public/css/style.css'
-	            }
-	        }
+        cssmin: {
+            build: {
+                files: {
+                    'public/css/style.min.css': 'public/css/style.css'
+                }
+            }
         },
         // watch tasks
         watch: {
             js: {
                 files: ['public/src/js/*.js'],
-                tasks: ['uglify']
+                tasks: ['uglify', 'concat']
             },
             less: {
                 files: ['public/src/less/*.less'],
@@ -47,7 +57,7 @@ module.exports = function(grunt) {
                 tasks: ['cssmin']
             }
         }
-	});
-	
-	grunt.registerTask('default', 'Run all build tasks.', ['uglify', 'less', 'cssmin']);
+    });
+
+    grunt.registerTask('default', 'Run all build tasks.', ['uglify', 'concat', 'less', 'cssmin']);
 };

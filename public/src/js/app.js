@@ -8,19 +8,19 @@
         pcId: '#page-content',
         $qs: d.querySelector.bind(d),
         $qsa: d.querySelectorAll.bind(d),
-        displayLoader: function() {
-            var spinner = [
-                '<div class="spinner">',
-                '<i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i>',
-                '</div>'
-            ];
-
-            return this.$qs(this.pcId).innerHTML = spinner.join('');
+        showLoader: function() {
+            this.$qs(this.pcId).style.opacity = '0.3';
+            return this.$qs('#loader').style.display = 'block';
+        },
+        hideLoader: function() {
+            this.$qs(this.pcId).style.opacity = 'initial';
+            return this.$qs('#loader').style.display = 'none';
         },
         displayFailure: function() {
             return this.$qs(this.pcId).innerHTML = '<h3>Failed to get content. Please try again.</h3>';
         },
         displayContent: function(content) {
+            this.hideLoader();
             return this.$qs(this.pcId).innerHTML = content;
         },
         getPath: function(url) {
@@ -41,7 +41,7 @@
 
             xhr.onloadstart = function() {
                 this.applyActiveClass(url);
-                this.displayLoader();
+                this.showLoader();
             }.bind(this);
 
             xhr.onerror = function() {

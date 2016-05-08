@@ -1,14 +1,17 @@
 @base-color: #333;
-@base-border-color: #ccc;
+@base-border-color: @color-white-gray;
 @base-font-size: 16px;
 @base-margin: 15px;
 @base-padding: 15px;
+
 @color-white: #fff;
+@color-white-gray: #ccc;
 @color-light-green: #6ac5ac;
 @color-background: #34302d;
 @img-size: 100px;
-@desktop-width: 700px;
-@mobile-width: 100%;
+
+@desktop-width: 35em;
+@mobile-width: auto;
 
 .center-block {
     margin-left: auto;
@@ -67,21 +70,26 @@ body {
 
 .container {
     width: auto;
+    word-wrap: break-word;
     .page-content {
         padding: 215px @base-padding @base-padding @base-padding;
         font-size: 1.1em;
         .center-block();
         .fa {
-            color: @color-light-green;
+            color: #ededed;
         }
         &>.spinner {
             margin-top: @base-margin;
+        }
+        &>.lead {
+            font-size: 1.25em;
+            color: #999;
         }
     }
     header {
         background-color: @color-background;
         text-align: center;
-        box-shadow: 5px 0px 15px @base-border-color;
+        box-shadow: 5px 0px 15px @color-white-gray;
         border-bottom: 3px solid @color-light-green;
         color: @color-white;
         display: block;
@@ -90,6 +98,7 @@ body {
         width: 100%;
         height: 200px;
         font-size: 1.5em;
+        text-transform: uppercase;
         .keyframes(fade-in; {
             0% {  opacity: 0; }
             50% {  opacity: 0.5; }
@@ -97,7 +106,7 @@ body {
         });
         .thumbnail {
             border-radius: 50%;
-            border: 3px solid @color-light-green;
+            border: 1px solid @color-background;
             background: url('../../public/images/boris.ding.jpg') no-repeat;
             height: @img-size;
             width: @img-size;
@@ -127,5 +136,18 @@ body {
                 text-decoration: none;
             }
         }
+    }
+    .loader {
+        @dimension: 35px;
+        display: none;
+        background: url('../../public/images/ajax-loader.gif') no-repeat;
+        left: 50%;
+        top: 60%;
+        position: fixed;
+        z-index: 9999;
+        width: @dimension;
+        height : @dimension;
+        margin-left : -17.333333px;
+        margin-top : -17.333333px;
     }
 }
