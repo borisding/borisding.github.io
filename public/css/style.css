@@ -102,23 +102,23 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  -webkit-animation: fade-in 1s linear 0.2s both;
-  -moz-animation: fade-in 1s linear 0.2s both;
-  animation: fade-in 1s linear 0.2s both;
+  -webkit-animation: fade-in 1s linear 0.1s both;
+  -moz-animation: fade-in 1s linear 0.1s both;
+  animation: fade-in 1s linear 0.1s both;
 }
 .container header .info {
-  -webkit-animation: fade-in 1s linear 0.5s both;
-  -moz-animation: fade-in 1s linear 0.5s both;
-  animation: fade-in 1s linear 0.5s both;
+  -webkit-animation: fade-in 1s linear 0.3s both;
+  -moz-animation: fade-in 1s linear 0.3s both;
+  animation: fade-in 1s linear 0.3s both;
 }
 .container nav {
   text-align: center;
   width: 100%;
   margin-top: 7.5px;
   margin-bottom: 7.5px;
-  -webkit-animation: fade-in 1s linear 0.7s both;
-  -moz-animation: fade-in 1s linear 0.7s both;
-  animation: fade-in 1s linear 0.7s both;
+  -webkit-animation: fade-in 1s linear 0.5s both;
+  -moz-animation: fade-in 1s linear 0.5s both;
+  animation: fade-in 1s linear 0.5s both;
 }
 .container nav > a {
   color: #fff;
