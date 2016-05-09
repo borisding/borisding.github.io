@@ -8,9 +8,10 @@
 @color-white-gray: #ccc;
 @color-light-green: #6ac5ac;
 @color-background: #34302d;
+
 @img-size: 100px;
 @header-height: 200px;
-
+@z-index: 9999;
 @desktop-width: 35em;
 @mobile-width: auto;
 
@@ -111,6 +112,7 @@ body {
         height: @header-height;
         font-size: 1.5em;
         text-transform: uppercase;
+        z-index: @z-index;
         .keyframes(fade-in; {
             0% {  opacity: 0; }
             50% {  opacity: 0.5; }
@@ -157,7 +159,7 @@ body {
     .spinner {
         display: none;
         position: fixed;
-        z-index: 9999;
+        z-index: @z-index;
     }
     .spinner-overlay {
         width: 100%;

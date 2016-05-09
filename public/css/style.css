@@ -67,6 +67,7 @@ body {
   height: 200px;
   font-size: 1.5em;
   text-transform: uppercase;
+  z-index: 9999;
 }
 @-moz-keyframes fade-in {
   0% {
