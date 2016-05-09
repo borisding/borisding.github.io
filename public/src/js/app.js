@@ -6,21 +6,23 @@
 
     var app = {
         pcId: '#page-content',
+        soId: '#spinner-overlay',
+        scId: '#spinner-content',
         $qs: d.querySelector.bind(d),
         $qsa: d.querySelectorAll.bind(d),
-        showLoader: function() {
-            this.$qs(this.pcId).style.opacity = '0.3';
-            return this.$qs('#loader').style.display = 'block';
+        showSpinner: function() {
+            this.$qs(this.soId).style.display = 'block';
+            this.$qs(this.scId).style.display = 'block';
         },
-        hideLoader: function() {
-            this.$qs(this.pcId).style.opacity = 'initial';
-            return this.$qs('#loader').style.display = 'none';
+        hideSpinner: function() {
+            this.$qs(this.soId).style.display = 'none';
+            this.$qs(this.scId).style.display = 'none';
         },
         displayFailure: function() {
             return this.$qs(this.pcId).innerHTML = '<h3>Failed to get content. Please try again.</h3>';
         },
         displayContent: function(content) {
-            this.hideLoader();
+            this.hideSpinner();
             return this.$qs(this.pcId).innerHTML = content;
         },
         getPath: function(url) {
@@ -41,7 +43,7 @@
 
             xhr.onloadstart = function() {
                 this.applyActiveClass(url);
-                this.showLoader();
+                this.showSpinner();
             }.bind(this);
 
             xhr.onerror = function() {
