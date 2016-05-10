@@ -1,29 +1,32 @@
-(function(d, udf) {
+(function(w, d, udf) {
     'use strict';
 
     // just ignore legacy browsers
     if (!'classList' in d.createElement('span')) return;
 
+    var $qs = d.querySelector.bind(d);
+    var $qsa = d.querySelectorAll.bind(d);
     var app = {
         pcId: '#page-content',
         soId: '#spinner-overlay',
         scId: '#spinner-content',
-        $qs: d.querySelector.bind(d),
-        $qsa: d.querySelectorAll.bind(d),
+        scrollTop: function() {
+            return w.scrollTo(0, 0);
+        },
         showSpinner: function() {
-            this.$qs(this.soId).style.display = 'block';
-            this.$qs(this.scId).style.display = 'block';
+            $qs(this.soId).style.display = 'block';
+            $qs(this.scId).style.display = 'block';
         },
         hideSpinner: function() {
-            this.$qs(this.soId).style.display = 'none';
-            this.$qs(this.scId).style.display = 'none';
+            $qs(this.soId).style.display = 'none';
+            $qs(this.scId).style.display = 'none';
         },
         displayFailure: function() {
-            return this.$qs(this.pcId).innerHTML = '<h3>Failed to get content. Please try again.</h3>';
+            return $qs(this.pcId).innerHTML = '<h3>Failed to get content. Please try again.</h3>';
         },
         displayContent: function(content) {
             this.hideSpinner();
-            return this.$qs(this.pcId).innerHTML = content;
+            return $qs(this.pcId).innerHTML = content;
         },
         getPath: function(url) {
             return ['./public/views/' , url , '.html'].join('') || '/';
@@ -31,11 +34,11 @@
         applyActiveClass: function(menuId) {
             var activeClass = 'active';
 
-            [].forEach.call(this.$qsa('#nav a.active'), function(menu) {
+            [].forEach.call($qsa('#nav a.active'), function(menu) {
                 menu.classList.remove(activeClass);
             });
 
-            return this.$qs('#' + menuId).classList.add(activeClass);
+            return $qs('#' + menuId).classList.add(activeClass);
         },
         request: function(url, cb) {
             if (cb === udf) throw new Error('Invalid callback function');
@@ -78,7 +81,7 @@
     };
 
     var run = function() {
-        [].forEach.call(this.$qsa('#nav a'), function(menu) {
+        [].forEach.call($qsa('#nav a'), function(menu) {
             if (menu.id) this.set(menu.id);
         }.bind(this));
 
@@ -89,7 +92,24 @@
         page({ hashbang: true });
     };
 
+    var s = $qs('#scroll-top');
+    
     if (Document !== udf) {
+        s.addEventListener('click', function(e) {
+            e.preventDefault();
+            app.scrollTop();
+        });
+
+        w.addEventListener('scroll', function(e) {
+            var minTop = 200;
+
+            if (d.body.scrollTop > minTop || d.documentElement.scrollTop > minTop) {
+                s.style.display = 'block';
+            } else {
+                s.style.display = 'none';
+            }
+        });
+
         d.addEventListener('DOMContentLoaded', run.bind(app));
     }
-}(document, undefined));
+}(window, document, undefined));

@@ -8,10 +8,6 @@
   margin-right: auto;
   display: inline-block;
 }
-html {
-  position: relative;
-  min-height: 100%;
-}
 body {
   font-family: 'PT Sans', sans-serif;
   font-size: 16px;
@@ -34,8 +30,9 @@ body {
   word-wrap: break-word;
 }
 .container .page-content {
-  padding: 215px 15px 15px 15px;
-  font-size: inherit;
+  padding: 0 15px;
+  margin: 0 auto;
+  font-size: 1.15em;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -43,12 +40,9 @@ body {
 .container .page-content .fa-quote-left {
   color: #e6e6e6;
 }
-.container .page-content > .spinner {
-  margin-top: 15px;
-}
 .container .page-content > .lead {
   font-size: 1.25em;
-  color: #999999;
+  color: #8c8c8c;
 }
 .container .page-content blockquote {
   border-left: 5px solid #6ac5ac;
@@ -56,17 +50,13 @@ body {
 }
 .container header {
   background-color: #34302d;
-  text-align: center;
   box-shadow: 5px 0px 15px #ccc;
   border-bottom: 3px solid #6ac5ac;
   color: #fff;
-  display: block;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 200px;
   font-size: 1.5em;
-  text-transform: uppercase;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  text-align: center;
   z-index: 9999;
 }
 @-moz-keyframes fade-in {
@@ -108,8 +98,6 @@ body {
   background: url('../../public/images/boris.ding.jpg') no-repeat;
   height: 100px;
   width: 100px;
-  margin-top: 7.5px;
-  margin-bottom: 7.5px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -128,12 +116,12 @@ body {
   -webkit-animation: fade-in 1s linear 0.5s both;
   -moz-animation: fade-in 1s linear 0.5s both;
   animation: fade-in 1s linear 0.5s both;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
 }
 .container nav {
   text-align: center;
   width: 100%;
-  margin-top: 7.5px;
-  margin-bottom: 7.5px;
   -webkit-animation: fade-in 1s linear 0.7s both;
   -moz-animation: fade-in 1s linear 0.7s both;
   animation: fade-in 1s linear 0.7s both;
@@ -175,4 +163,14 @@ body {
   display: none;
   position: fixed;
   z-index: 9999;
+}
+.container .scroll-top {
+  background-color: #6ac5ac;
+  color: #fff;
+  display: none;
+  bottom: 15px;
+  right: 15px;
+  opacity: .9;
+  position: fixed;
+  padding: 5px;
 }
