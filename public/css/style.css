@@ -53,7 +53,6 @@ body {
   box-shadow: 5px 0px 15px #ccc;
   border-bottom: 3px solid #6ac5ac;
   color: #fff;
-  font-size: 1.5em;
   padding-top: 7.5px;
   padding-bottom: 7.5px;
   text-align: center;
@@ -113,11 +112,13 @@ body {
   -o-transition: border-color 0.5s ease-in;
 }
 .container header .info {
+  font-size: 1.1em;
+  display: block;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
   -webkit-animation: fade-in 1s linear 0.5s both;
   -moz-animation: fade-in 1s linear 0.5s both;
   animation: fade-in 1s linear 0.5s both;
-  margin-top: 7.5px;
-  margin-bottom: 7.5px;
 }
 .container nav {
   text-align: center;
@@ -128,9 +129,9 @@ body {
 }
 .container nav > a {
   color: #fff;
-  font-size: .75em;
   margin-left: 7.5px;
   margin-right: 7.5px;
+  font-size: 1.25em;
 }
 .container nav > a:hover,
 .container nav > a.active {

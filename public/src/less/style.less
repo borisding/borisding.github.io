@@ -95,7 +95,6 @@ body {
         box-shadow: 5px 0px 15px @color-white-gray;
         border-bottom: 3px solid @color-light-green;
         color: @color-white;
-        font-size: 1.5em;
         padding-top: @base-padding / 2;
         padding-bottom: @base-padding / 2;
         text-align: center;
@@ -119,9 +118,11 @@ body {
             }
         }
         .info {
-            .animation(fade-in 1s linear .5s both);
+            font-size: 1.1em;
+            display: block;
             margin-top: @base-margin / 2;
             margin-bottom: @base-margin / 2;
+            .animation(fade-in 1s linear .5s both);
         }
     }
     nav {
@@ -130,9 +131,9 @@ body {
         .animation(fade-in 1s linear .7s both);
         &>a {
             color: @color-white;
-            font-size: .75em;
             margin-left: @base-margin / 2;
             margin-right: @base-margin / 2;
+            font-size: 1.25em;
             &:hover,
             &.active {
                 color: @color-light-green;
