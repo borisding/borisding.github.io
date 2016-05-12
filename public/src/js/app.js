@@ -10,7 +10,7 @@
         pcId: '#page-content',
         soId: '#spinner-overlay',
         scId: '#spinner-content',
-        scrollTop: function() {
+        goTop: function() {
             return w.scrollTo(0, 0);
         },
         showSpinner: function() {
@@ -25,6 +25,7 @@
             return $qs(this.pcId).innerHTML = '<h3>Failed to get content. Please try again.</h3>';
         },
         displayContent: function(content) {
+            this.goTop();
             this.hideSpinner();
             return $qs(this.pcId).innerHTML = content;
         },
@@ -57,7 +58,7 @@
                 if (this.status == 200) {
                     setTimeout(function() {
                         return cb(xhr.responseText);
-                    }, 500);
+                    }, 300);
                 }
             };
 
@@ -92,21 +93,20 @@
         page({ hashbang: true });
     };
 
-    var s = $qs('#scroll-top');
-    
     if (Document !== udf) {
-        s.addEventListener('click', function(e) {
-            e.preventDefault();
-            app.scrollTop();
-        });
-
         w.addEventListener('scroll', function(e) {
-            var minTop = 200;
+            var minTop = 200,
+                $nav = $qs('#nav'),
+                $pageContent = $qs('#page-content'),
+                bottomClass = 'bottom',
+                stickyClass = 'sticky';
 
             if (d.body.scrollTop > minTop || d.documentElement.scrollTop > minTop) {
-                s.style.display = 'block';
+                $pageContent.classList.add(bottomClass);
+                $nav.classList.add(stickyClass);
             } else {
-                s.style.display = 'none';
+                $pageContent.classList.remove(bottomClass);
+                $nav.classList.remove(stickyClass);
             }
         });
 
