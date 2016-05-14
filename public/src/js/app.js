@@ -97,15 +97,11 @@
         w.addEventListener('scroll', function(e) {
             var minTop = 200,                
                 $nav = $qs('#nav'),
-                $pageContent = $qs('#page-content'),
-                bottomClass = 'bottom',
                 stickyClass = 'sticky';
 
             if (d.body.scrollTop > minTop || d.documentElement.scrollTop > minTop) {
-                $pageContent.classList.add(bottomClass);
                 $nav.classList.add(stickyClass);
             } else {
-                $pageContent.classList.remove(bottomClass);
                 $nav.classList.remove(stickyClass);
             }
         });

@@ -74,9 +74,9 @@ body {
     width: auto;
     word-wrap: break-word;
     .page-content {
-        padding: 0 @base-padding;
-        margin: 0 @base-margin;
+        padding: 0 @base-padding (@base-padding * 4) @base-padding;
         font-size: 1.15em;
+        position: relative;
         .center-block();
         .fa-quote-left {
             color: lighten(@color-white-gray, 10%);
@@ -92,10 +92,6 @@ body {
             border-left: 5px solid @color-light-green;
             padding-left: @base-padding;
             margin-left: @base-margin;
-        }
-        &.bottom {
-            position: relative;
-            bottom: @base-margin * 4;
         }
     }
     header {
