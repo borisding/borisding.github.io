@@ -78,9 +78,25 @@
                     }.bind(this));
                 }
             }.bind(this));
+        },
+        showStickNav: function() {
+            var minTop = 200,
+                $pageContent = $qs('#page-content'),
+                $nav = $qs('#nav'),
+                spanBottomClass = 'spanBottom',
+                stickyClass = 'sticky';
+                
+            return setTimeout(function() {
+                if (d.body.scrollTop > minTop || d.documentElement.scrollTop > minTop) {
+                    $nav.classList.add(stickyClass);
+                    $pageContent.classList.add(spanBottomClass);
+                } else {
+                    $nav.classList.remove(stickyClass);
+                    $pageContent.classList.remove(spanBottomClass);
+                }
+            }, 100);
         }
     };
-
     var run = function() {
         [].map.call($qsa('#nav a'), function(menu) {
             if (menu.id) this.set(menu.id);
@@ -95,19 +111,8 @@
 
     if (Document !== udf) {
         w.addEventListener('scroll', function(e) {
-            var minTop = 200,
-                $pageContent = $qs('#page-content'),
-                $nav = $qs('#nav'),
-                spanBottomClass = 'spanBottom',
-                stickyClass = 'sticky';
-
-            if (d.body.scrollTop > minTop || d.documentElement.scrollTop > minTop) {
-                $nav.classList.add(stickyClass);
-                $pageContent.classList.add(spanBottomClass);
-            } else {
-                $nav.classList.remove(stickyClass);
-                $pageContent.classList.remove(spanBottomClass);
-            }
+            if (scrollDelay) clearTimeout(scrollDelay);
+            var scrollDelay = app.showStickNav();
         });
 
         d.addEventListener('DOMContentLoaded', run.bind(app));
