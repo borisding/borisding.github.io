@@ -8,6 +8,7 @@
 @color-white-gray: #ccc;
 @color-light-green: #6ac5ac;
 @color-background: #34302d;
+@color-highlight: lighten(@color-light-green, 35%);
 
 @img-size: 100px;
 @z-index: 9999;
@@ -50,6 +51,7 @@
     -ms-transition: @transition; 
     -o-transition: @transition;  
 }
+
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: @base-font-size;
@@ -61,7 +63,7 @@ body {
 @media (min-width: 768px) {
     .container .page-content {
         width: @desktop-width;
-    }    
+    }
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
@@ -74,19 +76,22 @@ body {
     width: auto;
     word-wrap: break-word;
     .page-content {
-        padding: 0 @base-padding (@base-padding * 4) @base-padding;
+        padding: 0 @base-padding;
         font-size: 1.15em;
         position: relative;
         .center-block();
         .fa-quote-left {
             color: lighten(@color-white-gray, 10%);
         }
-        label {
-            background-color: lighten(@color-white-gray, 15%);
-        }
         &>.lead {
             font-size: 1.25em;
             color: darken(@color-white-gray, 25%);
+        }
+        &.spanBottom {
+            padding-bottom: @base-padding * 4;
+        }
+        label {
+            background-color: @color-highlight;
         }
         blockquote {
             border-left: 5px solid @color-light-green;
