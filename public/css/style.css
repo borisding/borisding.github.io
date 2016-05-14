@@ -50,15 +50,12 @@ body {
 .container .page-content.spanBottom {
   padding-bottom: 60px;
 }
-.container .page-content label {
-  background-color: #eaf7f4;
-}
 .container .page-content blockquote {
   border-left: 5px solid #6ac5ac;
   padding-left: 15px;
   margin-left: 15px;
 }
-.container .page-content blockquote label {
+.container .page-content blockquote.has-tag > span {
   font-size: .9em;
   background-color: #fff;
   border: 1px solid #6ac5ac;
@@ -68,9 +65,12 @@ body {
   padding: 3.75px 5px;
   margin: 3.75px auto;
 }
-.container .page-content blockquote label:hover {
+.container .page-content blockquote.has-tag > span:hover {
   color: #333;
   background-color: #e6e6e6;
+}
+.container .page-content .highlight {
+  background-color: #eaf7f4;
 }
 .container header {
   background-color: #34302d;
