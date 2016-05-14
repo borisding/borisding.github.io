@@ -79,13 +79,13 @@
                 }
             }.bind(this));
         },
-        showStickNav: function() {
+        showStickyNav: function() {
             var minTop = 200,
                 $pageContent = $qs('#page-content'),
                 $nav = $qs('#nav'),
                 spanBottomClass = 'spanBottom',
                 stickyClass = 'sticky';
-                
+
             return setTimeout(function() {
                 if (d.body.scrollTop > minTop || d.documentElement.scrollTop > minTop) {
                     $nav.classList.add(stickyClass);
@@ -112,7 +112,7 @@
     if (Document !== udf) {
         w.addEventListener('scroll', function(e) {
             if (scrollDelay) clearTimeout(scrollDelay);
-            var scrollDelay = app.showStickNav();
+            var scrollDelay = app.showStickyNav();
         });
 
         d.addEventListener('DOMContentLoaded', run.bind(app));

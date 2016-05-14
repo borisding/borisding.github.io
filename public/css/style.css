@@ -55,6 +55,20 @@ body {
   padding-left: 15px;
   margin-left: 15px;
 }
+.container .page-content blockquote label {
+  font-size: .9em;
+  background-color: #fff;
+  border: 1px solid #6ac5ac;
+  border-radius: 4px;
+  color: #3fa388;
+  display: inline-block;
+  padding: 3.75px 5px;
+  margin: 3.75px auto;
+}
+.container .page-content blockquote label:hover {
+  color: #333;
+  background-color: #e6e6e6;
+}
 .container header {
   background-color: #34302d;
   box-shadow: 5px 0px 15px #ccc;
@@ -151,7 +165,8 @@ body {
   background-color: #34302d;
   border-top: 3px solid #6ac5ac;
   bottom: 0;
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   z-index: 9999;
 }
 .container .spinner {

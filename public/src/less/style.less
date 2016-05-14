@@ -97,6 +97,20 @@ body {
             border-left: 5px solid @color-light-green;
             padding-left: @base-padding;
             margin-left: @base-margin;
+            label {
+                font-size: .9em;
+                background-color: @color-white;
+                border: 1px solid @color-light-green;
+                border-radius: 4px;
+                color: darken(@color-light-green, 15%);
+                display: inline-block;
+                padding: (@base-padding / 4) (@base-padding / 3);
+                margin: (@base-margin / 4) auto;
+                &:hover {
+                    color: @base-color;
+                    background-color: lighten(@color-white-gray, 10%);
+                }
+            }
         }
     }
     header {
@@ -155,7 +169,8 @@ body {
             background-color: @color-background;
             border-top: 3px solid @color-light-green;
             bottom: 0;
-            padding: @base-padding;
+            padding-top: @base-padding;
+            padding-bottom: @base-padding;
             z-index: @z-index;
         }
     }
