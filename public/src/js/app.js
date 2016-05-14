@@ -35,7 +35,7 @@
         applyActiveClass: function(menuId) {
             var activeClass = 'active';
 
-            [].forEach.call($qsa('#nav a.active'), function(menu) {
+            [].map.call($qsa('#nav a.active'), function(menu) {
                 menu.classList.remove(activeClass);
             });
 
@@ -82,7 +82,7 @@
     };
 
     var run = function() {
-        [].forEach.call($qsa('#nav a'), function(menu) {
+        [].map.call($qsa('#nav a'), function(menu) {
             if (menu.id) this.set(menu.id);
         }.bind(this));
 
@@ -95,7 +95,7 @@
 
     if (Document !== udf) {
         w.addEventListener('scroll', function(e) {
-            var minTop = 200,
+            var minTop = 200,                
                 $nav = $qs('#nav'),
                 $pageContent = $qs('#page-content'),
                 bottomClass = 'bottom',
