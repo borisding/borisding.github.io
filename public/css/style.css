@@ -69,6 +69,9 @@ body {
   color: #333;
   background-color: #e6e6e6;
 }
+.container .page-content small {
+  font-weight: normal;
+}
 .container .page-content .highlight {
   background-color: #eaf7f4;
 }
