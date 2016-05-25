@@ -4,6 +4,7 @@
     // just ignore legacy browsers
     if (!'classList' in d.createElement('span')) return;
 
+    var xhr;
     var $qs = d.querySelector.bind(d);
     var $qsa = d.querySelectorAll.bind(d);
     var app = {
@@ -30,7 +31,7 @@
             return $qs(this.pcId).innerHTML = content;
         },
         getPath: function(url) {
-            return ['./public/views/' , url , '.html'].join('') || '/';
+            return ['./public/views/', url, '.html'].join('') || '/';
         },
         applyActiveClass: function(menuId) {
             var activeClass = 'active';
@@ -43,7 +44,8 @@
         },
         request: function(url, cb) {
             if (cb === udf) throw new Error('Invalid callback function');
-            var xhr = new XMLHttpRequest();
+            if (xhr && xhr.readyState != 4) xhr.abort();
+            xhr = new XMLHttpRequest();
 
             xhr.onloadstart = function() {
                 this.applyActiveClass(url);
