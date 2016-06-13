@@ -1,0 +1,88 @@
+body {
+    background: #f7f7f7;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    margin: 15px auto;
+    color: #222;
+}
+@media (min-width: 768px) {
+    .container .page-content {
+    width: 35em;
+  }
+}
+@media (min-width: 300px) and (max-width: 767px) {
+    .container .page-content {
+    width: auto;
+  }
+}
+.container {
+    width: auto;
+    word-wrap: break-word;
+}
+.page-content,
+.thumbnail {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.page-content {
+    padding: 0 15px;
+}
+section {
+    margin: 20px 0;
+}
+section a {
+    color: #222;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+section a:hover:before {
+    border-color: #6ac5ac;
+    -webkit-transition: border-color 1s;
+    -moz-transition: border-color 1s;
+    -ms-transition: border-color 1s;
+    -o-transition: border-color 1s;
+    transition: border-color 1s;
+}
+section a:before {
+    content: ' ';
+    position: absolute;
+    border-bottom: 2px solid #ccc;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+}
+section ul {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+section ul li:first-child {
+    padding-top: 0;
+}
+section ul li {
+    padding: 15px 0 0;
+    list-style-type: square;
+}
+.thumbnail {
+    border-radius: 50%;
+    background: url('../../public/images/boris.ding.jpg') no-repeat;
+    height: 100px;
+    width: 100px;
+}
+.line {
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #6ac5ac;
+    margin: 30px 0 30px;
+    line-height: 0.1em;
+}
+.name {
+    background-color: #f7f7f7;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.copyright {
+    color: #aaa;
+    font-size: .9em;
+}
