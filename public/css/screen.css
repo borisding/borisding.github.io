@@ -7,13 +7,13 @@ body {
 }
 @media (min-width: 768px) {
     .container .page-content {
-    width: 35em;
-  }
+        width: 35em;
+    }
 }
 @media (min-width: 300px) and (max-width: 767px) {
     .container .page-content {
-    width: auto;
-  }
+        width: auto;
+    }
 }
 .container {
     width: auto;
@@ -72,7 +72,7 @@ section ul li {
     text-align: center;
     border-bottom: 2px solid #6ac5ac;
     margin: 20px 0 30px;
-    line-height: 0.1em;
+    line-height: .1em;
 }
 .name {
     background-color: #fff;
