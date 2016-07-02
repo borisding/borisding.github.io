@@ -36,12 +36,12 @@ section a {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    z-index: 1px;
+    z-index: 1;
 }
 section a:hover:before {
     border-color: #6ac5ac;
-    -webkit-transition: all 250ms ease-in;
-    transition: all 250ms ease-in;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
 }
 section a:before {
     content: ' ';
